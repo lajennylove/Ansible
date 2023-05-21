@@ -1,3 +1,4 @@
+# ansible-playbook playbook-test.yml --inventory inventory
 ---
 - hosts: all
   become: yes
