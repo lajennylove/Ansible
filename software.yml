@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Getting server php version
+      command: php -v
+      register: php_version
+
+    - name: Getting server mysql version
+      command: mysql --version
+      register: mysql_version
+
+    - name: Show the php software
+      ansible.builtin.debug:
+        msg: "{{ php_version.stdout_lines }}"
+
+    - name: Show the mysql software
+      ansible.builtin.debug:
+        msg: "{{ mysql_version.stdout_lines }}"
