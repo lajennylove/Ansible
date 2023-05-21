@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Show the uptime in days/hours/minutes/seconds
+      ansible.builtin.debug:
+        msg: Uptime {{ now().replace(microsecond=0) - now().fromtimestamp(now(fmt='%s') | int - ansible_uptime_seconds) }}
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Upgrade all packages
+      apt:
+        upgrade: yes
+    - name: Reboot the server
+      reboot:

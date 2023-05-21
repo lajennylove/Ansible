@@ -1,0 +1,7 @@
+[groupname1]
+MyServer1 ansible_host=127.0.0.1 ansible_user=youruser ansible_ssh_pass=yourpassword
+
+[groupname2]
+MyServer2 ansible_host=127.0.0.1 ansible_user=youruser ansible_ssh_pass=yourpassword
+MyServer3 ansible_host=127.0.0.1 ansible_user=youruser ansible_ssh_pass=yourpassword
+MyServer4 ansible_host=127.0.0.1 ansible_user=youruser ansible_ssh_pass=yourpassword
